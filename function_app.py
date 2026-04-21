@@ -21,9 +21,10 @@ def ProcesarSubsidio(req: func.HttpRequest) -> func.HttpResponse:
         if not nombre or not rut:
             return func.HttpResponse("Error: Faltan datos", status_code=400)
 
+        # Configuración extraída de tus capturas
         server = 'server-subsidios.database.windows.net' 
-        database = 'free-sql-db-8921552'' 
-        username = 'nicolas_admin'
+        database = 'free-sql-db-8921552' 
+        username = 'admin_subsidios'
         password = 'NicoDiegoAngelo2026'
         
         conn_str = f'DRIVER={{ODBC Driver 18 for SQL Server}};SERVER={server};DATABASE={database};UID={username};PWD={password};Encrypt=yes;TrustServerCertificate=no;Connection Timeout=30;'
@@ -41,4 +42,4 @@ def ProcesarSubsidio(req: func.HttpRequest) -> func.HttpResponse:
         )
 
     except Exception as e:
-        return func.HttpResponse(f"Error: {str(e)}", status_code=500)
+        return func.HttpResponse(f"Error en el backend: {str(e)}", status_code=500)
