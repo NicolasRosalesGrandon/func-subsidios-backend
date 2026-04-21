@@ -22,9 +22,9 @@ def ProcesarSubsidio(req: func.HttpRequest) -> func.HttpResponse:
             return func.HttpResponse("Error: Faltan datos", status_code=400)
 
         server = 'server-subsidios.database.windows.net' 
-        database = 'TU_BASE_DE_DATOS' 
-        username = 'TU_USUARIO'
-        password = 'TU_PASSWORD'
+        database = 'db-subsidios' 
+        username = 'nicolas_admin'
+        password = 'NicoDiegoAngelo2026'
         
         conn_str = f'DRIVER={{ODBC Driver 18 for SQL Server}};SERVER={server};DATABASE={database};UID={username};PWD={password};Encrypt=yes;TrustServerCertificate=no;Connection Timeout=30;'
 
