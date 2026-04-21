@@ -22,7 +22,7 @@ def ProcesarSubsidio(req: func.HttpRequest) -> func.HttpResponse:
             return func.HttpResponse("Error: Faltan datos", status_code=400)
 
         server = 'server-subsidios.database.windows.net' 
-        database = 'db-subsidios' 
+        database = 'free-sql-db-8921552'' 
         username = 'nicolas_admin'
         password = 'NicoDiegoAngelo2026'
         
