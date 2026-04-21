@@ -7,9 +7,10 @@ app = func.FunctionApp(http_auth_level=func.AuthLevel.ANONYMOUS)
 
 @app.route(route="ProcesarSubsidio")
 def ProcesarSubsidio(req: func.HttpRequest) -> func.HttpResponse:
+    # Esta parte es para que tú veas que funciona desde el navegador
     if req.method == 'GET':
         return func.HttpResponse(
-            "Backend UTEM Activo. Esperando datos por POST.",
+            "Backend UTEM Activo - Nicolas, la base de datos esta lista.",
             status_code=200
         )
 
@@ -21,7 +22,7 @@ def ProcesarSubsidio(req: func.HttpRequest) -> func.HttpResponse:
         if not nombre or not rut:
             return func.HttpResponse("Error: Faltan datos", status_code=400)
 
-        # Configuración extraída de tus capturas
+        # Datos exactos de tus capturas
         server = 'server-subsidios.database.windows.net' 
         database = 'free-sql-db-8921552' 
         username = 'admin_subsidios'
@@ -42,4 +43,4 @@ def ProcesarSubsidio(req: func.HttpRequest) -> func.HttpResponse:
         )
 
     except Exception as e:
-        return func.HttpResponse(f"Error en el backend: {str(e)}", status_code=500)
+        return func.HttpResponse(f"Error: {str(e)}", status_code=500)
